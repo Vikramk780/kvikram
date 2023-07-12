@@ -33,24 +33,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Git
-        run: |
-          git config --global user.email "vikramkamble473@gmail.com"
-          git config --global user.name "Vikramk780"
-
-      - name: Pull changes
-        run: |
-          git pull origin gh-pages
-
-      - name: Force deploy
-        run: |
-          echo "Forced deployment" > ./test-output/SparkReport/force_deploy.txt
-          git add ./test-output/SparkReport/force_deploy.txt
-          git commit -m "Force deployment at $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-          git push origin HEAD:gh-pages
-
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: gh-pages
           folder: ./test-output/SparkReport
+    
