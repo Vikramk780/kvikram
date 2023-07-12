@@ -33,6 +33,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Set up Git
+        run: |
+          git config --global user.email "vikramkamble473@gmail.com"
+          git config --global user.name "Vikramk780"
+
       - name: Force deploy
         run: |
           echo "Forced deployment" > ./test-output/SparkReport/force_deploy.txt
