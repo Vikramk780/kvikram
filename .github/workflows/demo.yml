@@ -33,6 +33,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Remove existing report
+        run: rm -rf ./test-output/SparkReport
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
@@ -40,4 +43,3 @@ jobs:
           folder: ./test-output/SparkReport
           commit_message: Automatic deployment
           force: true
-    
