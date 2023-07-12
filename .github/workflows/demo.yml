@@ -22,18 +22,10 @@ jobs:
           java-version: '11'
 
       - name: Build with Maven
-        run: mvn clean package
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+        run: mvn test
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: gh-pages
-          folder: ./target/report
+          folder: ./test-output/SparkReport
