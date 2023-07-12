@@ -38,5 +38,4 @@ jobs:
         with:
           branch: gh-pages
           folder: ./test-output/SparkReport
-          commit_message: Automatic deployment
-          force_orphan: true
+    
